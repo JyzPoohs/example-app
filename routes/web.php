@@ -18,3 +18,13 @@ Route::view('/welcome', 'Layouts.index');
 Route::get('/index', function () {
     return view('Layouts.index');
 });
+
+//With parameter
+Route::get('/users/{id}', function ($id) {
+    echo $id;
+});
+
+//Optional parameter
+Route::get('/user/{name?}', function (string $name = "Jane") {
+    return $name;
+});
